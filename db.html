@@ -12,3 +12,9 @@ module.exports = mysql.createConnection({ <br>
 }) <br>
 <hr>
 <h1>2nd option</h1>
+<h2></h2><br>
+const mysql = require('mysql2')<br>
+<br>
+module.exports = mysql.createConnection(process.env.JAWSDB_URL || 'mysql://root:rootroot@localhost/todo_db')<br>
+<br>
+<hr>
