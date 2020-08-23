@@ -1,0 +1,53 @@
+<h1>index.js</h1>
+<br>
+const router = require('express').Router() <br>
+<br>
+router.use('/api', require('./itemRoutes.js')) <br>
+router.use('/', require('./viewRoutes.js')) <br>
+<br>
+module.exports = router <br>
+<br>
+<hr>
+<h1>itemRoutes.js</h1>
+<br>
+const router = require('express').Router() <br>
+const { join } = require('path') <br>
+const fs = require('fs') <br>
+const uuid = require('uuid') <br>
+<br>
+// GET all items <br>
+router.get('/items', (req, res) => { <br>
+    <br>
+}) <br>
+<br>
+// POST one item <br>
+router.post('/items', (req, res) => { <br>
+    <br>
+}) <br>
+<br>
+// PUT one item <br>
+router.put('/items/:id', (req, res) => { <br>
+    <br>
+}) <br>
+<br>
+// DELETE one item <br>
+router.delete('/items/:id', (req, res) => { <br>
+    <br>
+}) <br>
+<br>
+module.exports = router <br>
+<br>
+<hr>
+<h1>viewRoutes.js</h1>
+<br>
+const router = require('express').Router() <br>
+const { join } = require('path') <br>
+<br>
+router.get('/*', (req, res) => { <br>
+  res.sendFile(join(__dirname, '..', 'public', 'index.html')) <br>
+}) <br>
+<br>
+module.exports = router <br>
+<br>
+<hr>
+
