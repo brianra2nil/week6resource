@@ -37,13 +37,25 @@
       <hr>
 
       <h1>How to deploy on heroku</h1>
-      <p>go into terminal and type "heroku create"</p>
-      <p>make a mental note of the name given eg: "guarded-atoll"</p>
-      <p>go to your heroku dashboard and click on the app by the name created above</p>
-      <p>click on resources</p>
-      <p>Under "Add-ons" type "jaws" and select "JawsDB MySQL" when it comes up</p>
-      <p>Make sure to selec the free version and need to put in a credit card number, then click on "provision"</p>
-      <p>click the box with the arrow beside where it says "JawsDB MySQL", this takes you to the settings and connection info.</p>
+      <ol>
+      <li>Go into terminal and type "heroku create"</li>
+      <li>Gake a mental note of the name given eg: "guarded-atoll"</p>
+      <li>Go to your heroku dashboard and click on the app by the name created above</li>
+      <li>Click on resources</li>
+      <li>Under "Add-ons" type "jaws" and select "JawsDB MySQL" when it comes up</li>
+      <li>Make sure to selec the free version and need to put in a credit card number, then click on "provision"</li>
+      <li>Click the box with the arrow beside where it says "JawsDB MySQL", this takes you to the settings and connection info.</li>
+      <li>Open workbench and close the instance </li>
+      <li>Click on the "+" sign next to "MySQL Connections</li>
+      <li>Give it a name under "connection name"</li>
+      <li>Copy the value of "Host" from the Heroku settings and connection info in step 7, paste it in to Hostname field on Workbench</li>
+      <li>Copy the value of "Username" from the Heroku settings and connection info in step 7, paste it in to Username field on Workbench</li>
+      <li>Copy the value of "Username" from the Heroku settings and connection info in step 7, paste it in to Username field on Workbench</li>
+      <li>Copy the value of "Password" from the Heroku settings and connection info in step 7, paste it in to Password field on Workbench by clicking on "store in vault..."</li>
+      <li>Copy the value of "Database" from the Heroku settings and connection info in step 7, paste it in to Default Schema field on Workbench.  <a href="">click for visual</a></li>
+      <li>Click on OK, and open the new app created in Workbench.  Now need to make a use statement with the <a href="databse.html">database name</a></li>
+    </ol>
+
 
 
 
