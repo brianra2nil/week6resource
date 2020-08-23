@@ -26,24 +26,39 @@
       </div>
 
       <div class="container">
-        <div class="row row-cols-5">
+        <div class="row row-cols-6">
           <div class="col"><a href="db.html">db folder</a></div>
           <div class="col"><a href="public.html">public folder</a></div>
           <div class="col"><a href="routes.html">routes folder</a></div>
+          <div class="col"><a href="sql.html">sql folder</a></div>
           <div class="col"><a href="gitignore.html">.gitignore</a></div>
           <div class="col"><a href="serverjs.html">server.js</a></div>
         </div>
       </div>
       <hr>
 
-      <h1>How to deploy on heroku</h1>
+      <h1>Starting a full stack application</h1>
       <ol>
-      <li>Go into terminal and type "heroku create"</li>
-      <li>Gake a mental note of the name given eg: "guarded-atoll"</p>
+          <li>Create a server.js file</li>
+          <li>Type in terminal: "npm init -y" to initialize NPMs</li>
+          <li>Type in terminal: "mpm i express" to install express package</li>
+          <li>Create a .gitignore file (copy and paste from link above)</li>
+          <li>Create your route folder.  (copy and paste 3 files from links above)</li>
+          <li>Type in terminal: "npm i mysql2" to install mysqp2</li>
+          <li>Make a folder called "DB", with an "index.js" file inside it copy and paste from links above</li>
+          <li></li>
+          
+
+      </ol>
+
+      <h1>How to deploy on heroku with a database</h1>
+      <ol>
+      <li>Go into terminal in VS CODE and type "heroku create"</li>
+      <li>Make a mental note of the name given eg: "guarded-atoll"</li>
       <li>Go to your heroku dashboard and click on the app by the name created above</li>
       <li>Click on resources</li>
       <li>Under "Add-ons" type "jaws" and select "JawsDB MySQL" when it comes up</li>
-      <li>Make sure to selec the free version and need to put in a credit card number, then click on "provision"</li>
+      <li>Make sure to selec the free version and also you need to put in a credit card number, then click on "provision"</li>
       <li>Click the box with the arrow beside where it says "JawsDB MySQL", this takes you to the settings and connection info.</li>
       <li>Open workbench and close the instance </li>
       <li>Click on the "+" sign next to "MySQL Connections</li>
@@ -52,9 +67,10 @@
       <li>Copy the value of "Username" from the Heroku settings and connection info in step 7, paste it in to Username field on Workbench</li>
       <li>Copy the value of "Username" from the Heroku settings and connection info in step 7, paste it in to Username field on Workbench</li>
       <li>Copy the value of "Password" from the Heroku settings and connection info in step 7, paste it in to Password field on Workbench by clicking on "store in vault..."</li>
-      <li>Copy the value of "Database" from the Heroku settings and connection info in step 7, paste it in to Default Schema field on Workbench.  <a href="">click for visual</a></li>
+      <li>Copy the value of "Database" from the Heroku settings and connection info in step 7, paste it in to Default Schema field on Workbench.  <a href="herokutoworkbench.html">click for visual</a></li>
       <li>Click on OK, and open the new app created in Workbench.  Now need to make a use statement with the <a href="databse.html">database name</a></li>
     </ol>
+    <li>"git push heroku master" to push to heroku</li>
 
 
 

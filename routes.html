@@ -11,27 +11,26 @@ module.exports = router <br>
 <h1>itemRoutes.js</h1>
 <br>
 const router = require('express').Router() <br>
-const { join } = require('path') <br>
-const fs = require('fs') <br>
-const uuid = require('uuid') <br>
+const db = require('../db') <br>
+
 <br>
 // GET all items <br>
-router.get('/items', (req, res) => { <br>
+router.get('/', (req, res) => { <br>
     <br>
 }) <br>
 <br>
 // POST one item <br>
-router.post('/items', (req, res) => { <br>
+router.post('/', (req, res) => { <br>
     <br>
 }) <br>
 <br>
 // PUT one item <br>
-router.put('/items/:id', (req, res) => { <br>
+router.put('/', (req, res) => { <br>
     <br>
 }) <br>
 <br>
 // DELETE one item <br>
-router.delete('/items/:id', (req, res) => { <br>
+router.delete('/', (req, res) => { <br>
     <br>
 }) <br>
 <br>
@@ -51,3 +50,43 @@ module.exports = router <br>
 <br>
 <hr>
 
+<h1>itemRoutes.js --> to-do project specific</h1>
+<br>
+const router = require('express').Router() <br>
+const db = require('../db')<br>
+<br>
+// GET all items<br>
+router.get('/items', (req, res) => {<br>
+  db.query('SELECT * FROM items', (err, items) => {<br>
+    if (err) { console.log(err) }<br>
+    res.json(items)<br>
+  })<br>
+})<br>
+<br>
+// POST one item<br>
+router.post('/items', (req, res) => {<br>
+  db.query('INSERT INTO items SET ?', req.body, (err, fields) => {<br>
+    if (err) { console.log(err) }<br>
+    res.json({ id: fields.insertId })<br>
+  })<br>
+})<br>
+<br>
+// PUT one item<br>
+router.put('/items/:id', (req, res) => {<br>
+  db.query('UPDATE items SET isDone = ? WHERE id = ?', [req.body.isDone, req.params.id], err => {<br>
+    if (err) { console.log(err) }<br>
+    res.sendStatus(200)<br>
+  })<br>
+})<br>
+<br>
+// DELETE one item<br>
+router.delete('/items/:id', (req, res) => {<br>
+  db.query('DELETE FROM items WHERE id = ?', req.params.id, err => {<br>
+    if (err) { console.log(err) }<br>
+    res.sendStatus(200)<br>
+  })<br>
+})<br>
+<br>
+module.exports = router<br>
+<br>
+<hr>

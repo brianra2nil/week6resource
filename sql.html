@@ -1,0 +1,28 @@
+<h1>There is no functionality in this code, the purpose is so it can be copied and pasted into workbench.</h1>
+<hr>
+<h1>schema.sql file (replace with the variables and name of your database)</h1>
+<br>
+DROP DATABASE IF EXISTS todo_db;<br>
+<br>
+CREATE DATABASE todo_db;<br>
+<br>
+USE todo_db;<br>
+<br>
+CREATE TABLE items (<br>
+	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,<br>
+    text VARCHAR(50) NOT NULL,<br>
+    isDone BOOL NOT NULL DEFAULT 0<br>
+);<br>
+<br>
+<hr>
+<h1>seed.sql file (replace with the variables and name of your database)</h1><br>
+USE todo_db;<br>
+<br>
+INSERT INTO items (text, isDone)<br>
+VALUES ('Take out trash', false), <br>
+('Cook dinner', true), <br>
+('Do laundry', false),<br>
+('Walk the dog', true),<br>
+('Pick up dry cleaning', false)<br>
+('Mow the lawn', false);<br>
+<br>
