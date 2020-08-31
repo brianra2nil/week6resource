@@ -10,3 +10,21 @@ app.use(express.json()) <br>
 app.use(require('./routes')) <br>
 <br>
 app.listen(process.env.PORT || 3000) <br>
+
+<hr>
+
+<h1>Sequalize:</h1>
+const express = require('express') <br>
+const { join } = require('path')<br>
+<br>
+const app = express()<br>
+<br>
+app.use(express.static(join(__dirname, 'public')))<br>
+app.use(express.urlencoded({ extended: true }))<br>
+app.use(express.json())<br>
+<br>
+app.use(require('./routes'))<br>
+<br>
+require('./db').sync()<br>
+  .then(() => app.listen(3000))<br>
+  .catch(err => console.log(err))<br>
